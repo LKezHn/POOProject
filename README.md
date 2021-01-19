@@ -68,6 +68,6 @@ Debe ser funcional en Linux Ubuntu 16.04 con Eclipse 4.14, en Java Server Pages 
 
 * Incluir en el proyecto actual de música un enlace a una nueva vista Buscar Otra Letra, donde en dicha vista existirá un buscador genérico (con su respectivo campo de texto de búsqueda) que será el cliente del WebService antes mencionado. Esta vista deberá estar acompañada de los archivos controladores JSP y JAVA correspondientes.  En esta nueva vista se deben mostrar ambas letras: las del API Externo y la del parseo del sitio HTML de lyrics.
 
-## Screebshots
+## Screenshots
 --------------------
 ![Image2](docs/img1.png)
