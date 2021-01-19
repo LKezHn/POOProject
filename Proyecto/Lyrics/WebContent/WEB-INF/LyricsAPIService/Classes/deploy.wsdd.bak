@@ -1,0 +1,29 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from LyricsAPIService WSDL service -->
+
+  <service name="LyricsAPI" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://Classes"/>
+      <parameter name="wsdlServiceElement" value="LyricsAPIService"/>
+      <parameter name="schemaQualified" value="http://Classes"/>
+      <parameter name="wsdlServicePort" value="LyricsAPI"/>
+      <parameter name="className" value="Classes.LyricsAPISoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="LyricsAPI"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getLyrics" qname="operNS:getLyrics" xmlns:operNS="http://Classes" returnQName="retNS:getLyricsReturn" xmlns:retNS="http://Classes" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:songName" xmlns:pns="http://Classes" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getLyrics"/>
+
+  </service>
+</deployment>
